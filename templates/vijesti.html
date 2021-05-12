@@ -1,0 +1,13 @@
+<button type="button" id="dodaj" ng-click=otvoriModal2('modal.php?modal_id=nova_vijest')>Dodaj</button>
+<input type="text" ng-model="search" placeholder="Traži">
+<div class="media" ng-repeat="vijest in oVijesti | filter: search">
+		<h4 class="media-heading"><span class="label label-info">{{vijest.datum | promijeniFormat}}</span>{{vijest.post_naziv}}</h4>
+		<div class="desc">{{vijest.post_tekst}}</div>
+		<button type="button" id={{vijest.post_id}} onclick="ObrisiVijest(this.id)">Obriši</button>
+</div>
+
+<div class="modal fade" id="modals" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+	<div class="modal-dialog">
+ 		<div class="modal-content"></div>
+ 	</div>
+</div>
